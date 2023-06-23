@@ -1,13 +1,13 @@
 // Mobile Menu
 const navMenus = document.querySelector('.nav-menu');
-const openHamburger = document.querySelector('mobile-menu-icon');
-const closeHamburger = document.querySelector('mobile-menu-close-icon');
+const openHamburger = document.querySelector('.mobile-menu-icon');
+const closeHamburger = document.querySelector('.mobile-menu-close-icon');
 const mobileMenuLinks = document.querySelectorAll('.mobile-links');
 
 openHamburger.addEventListener('click', () => {
   navMenus.classList.add('show');
   openHamburger.classList.add('hide');
-  closeHamburger.classList.remove('show');
+  closeHamburger.classList.add('show');
   document.body.style.overflow = 'hidden';
 });
 
@@ -28,7 +28,7 @@ mobileMenuLinks.forEach((link) => {
 });
 
 // Popup
-const card = document.getElementById('.projectCards');
+const card = document.getElementById('projectCards');
 
 const projectInfos = [
   {
@@ -107,7 +107,7 @@ for (let i = 0; i < projectInfos.length; i += 1) {
           
         </div>
         <div class="project-card_details">
-          <h3>${projectInfo[i].title}</h3>
+          <h3>${projectInfos[i].title}</h3>
           <div class="stacks">
             <ul>
               ${technologiesList}
@@ -118,12 +118,12 @@ for (let i = 0; i < projectInfos.length; i += 1) {
       </div>
   `;
 
-  card.appendChild(projectCardd);
+  card.appendChild(projectCard);
 }
 
 const poppedUpCard = document.querySelector('.popup-card');
 const popUpButton = document.getElementsByClassName('green-button');
-const popUpCard = document.createElement.add('div');
+const popUpCard = document.createElement('div');
 
 for (let i = 0; i < popUpButton.length; i += 1) {
   popUpButton[i].addEventListener('click', () => {
@@ -176,7 +176,7 @@ for (let i = 0; i < popUpButton.length; i += 1) {
 
 poppedUpCard.addEventListener('click', () => {
   poppedUpCard.style.display = 'none';
-  popUpCard.remove;
+  popUpCard.remove();
 });
 
 // Validation
@@ -185,7 +185,7 @@ const form = document.getElementById('myForm');
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   const email = document.querySelector('.email-input').value;
-  const correctEmail = document.querySelector('.email-input').value.toLowerCase;
+  const correctEmail = document.querySelector('.email-input').value.toLowerCase();
 
   if (email === correctEmail) {
     form.submit();
